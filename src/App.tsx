@@ -1,6 +1,13 @@
-function App() {
+import CountriesDashboard from "./Components/CountriesDashboard";
+import Header from "./Components/Header";
 
-  return <div></div>
+function App() {
+  return (
+    <div>
+      <Header />
+      <CountriesDashboard />
+    </div>
+  );
 }
 
-export default App
+export default App;
