@@ -10,7 +10,8 @@ export default {
       // Configure your color palette here
       dBlue: "hsl(209, 23%, 22%)",
       vDBlue: "hsl(207, 26%, 17%)",
-      white: "hsl(0, 0%, 100%)"
+      white: "hsl(0, 0%, 100%)",
+      dGrey: " hsl(0, 0%, 52%)"
     },
     fontFamily: {
       'nunito': ['Nunito Sans', 'sans-serif']

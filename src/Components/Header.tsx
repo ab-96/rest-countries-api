@@ -6,7 +6,6 @@ const Header = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const handleModoeToggle = (): void => {
-    console.log("Hey");
     setIsDarkMode(!isDarkMode);
   };
 
@@ -17,7 +16,7 @@ const Header = () => {
       }`}
     >
       <h1
-        className={`text-2xl text-center font-bold pl-7 font-nunito  ${
+        className={`text-2xl text-center font-bold pl-10 font-nunito  ${
           !isDarkMode ? "text-white" : "text-vDBlue"
         } `}
       >
