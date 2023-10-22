@@ -1,12 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
-const Header = () => {
+const flex = "flex justify-between items-center";
+const Header = (props: any) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const handleModoeToggle = (): void => {
     setIsDarkMode(!isDarkMode);
+    props.setTheme(isDarkMode);
   };
 
   return (
@@ -24,17 +27,21 @@ const Header = () => {
       </h1>
 
       <div className="flex justify-between items-center space-x-3  ">
-        <FontAwesomeIcon
-          style={{ color: isDarkMode ? "black" : "white" }}
-          icon={faMoon}
-        />
+        {!isDarkMode ? (
+          <FontAwesomeIcon
+            style={{ color: isDarkMode ? "black" : "white" }}
+            icon={faMoon}
+          />
+        ) : (
+          <FontAwesomeIcon icon={faSun} />
+        )}
         <span
           className={`${
             !isDarkMode ? "text-white" : "text-vDBlue"
           }  font-nunito cursor-pointer`}
           onClick={handleModoeToggle}
         >
-          Dark Mode
+          {!isDarkMode ? "Dark Mode" : "Light Mode"}
         </span>
       </div>
     </header>
@@ -42,4 +49,3 @@ const Header = () => {
 };
 
 export default Header;
-const flex = "flex justify-between items-center";

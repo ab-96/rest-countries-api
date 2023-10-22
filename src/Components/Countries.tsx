@@ -1,9 +1,15 @@
+import { useContext } from "react";
+import { ThemeContext } from "../App";
 import Country from "./Country";
 
 const Countries = (props: any) => {
   const filteredCountries = props.countries.filter((country: any) =>
     country.name.common.toLowerCase().includes(props.searchInput)
   );
+
+  const theme = useContext(ThemeContext);
+
+  const dark = !theme ? "text-white" : "text-vDBlue";
 
   const country = filteredCountries.map((country: any, index: number) => (
     <Country
@@ -17,12 +23,14 @@ const Countries = (props: any) => {
   ));
 
   return (
-    <section className="max-w-7xl mx-auto">
+    <section className="max-w-7xl mx-auto pb-10">
       <div className=" flex flex-wrap gap-10 min-h-screen ">
         {props.isThere ? (
           country
         ) : (
-          <p className="font-nunito text-white">No were countries matched, try again.</p>
+          <p className={`font-nunito ${dark}`}>
+            No were countries matched, try again.
+          </p>
         )}{" "}
       </div>
     </section>
