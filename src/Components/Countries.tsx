@@ -23,7 +23,7 @@ const Countries = (props: any) => {
   ));
 
   return (
-    <section className="max-w-7xl mx-auto pb-10">
+    <section className="max-w-7xl mx-auto pb-10 ">
       <div className=" flex flex-wrap gap-10 min-h-screen ">
         {props.isThere ? (
           country
@@ -38,3 +38,8 @@ const Countries = (props: any) => {
 };
 
 export default Countries;
+
+
+
+/// click europe button - > re-render list to display only europe
+/// can filter out only europe or 

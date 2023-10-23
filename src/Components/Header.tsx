@@ -4,6 +4,7 @@ import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 const flex = "flex justify-between items-center";
+  const position = "fixed top-0 left-0 right-0 z-50";
 const Header = (props: any) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -12,9 +13,11 @@ const Header = (props: any) => {
     props.setTheme(isDarkMode);
   };
 
+
+
   return (
     <header
-      className={`${flex} p-10 drop-shadow-lg h-24  ${
+      className={`${flex} ${position}  p-10 drop-shadow-lg h-24  ${
         !isDarkMode ? "bg-dBlue" : "bg-white"
       }`}
     >

@@ -12,7 +12,7 @@ const SearchBox = (props: any) => {
   };
 
   return (
-    <section className="drop-shadow-md">
+    <section className="drop-shadow-md mt-32 ">
       <div
         className={`w-80 rounded-lg flex items-center justify-center ${dark}`}
       >
@@ -23,7 +23,7 @@ const SearchBox = (props: any) => {
         <input
           type="text"
           placeholder="Search for a country"
-          className={`w-full p-4 rounded-lg outline-none ${dark}`}
+          className={`w-full p-4 rounded-lg outline-none  font-nunito ${dark}`}
           onChange={getSearchInput}
         />
       </div>

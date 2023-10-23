@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext, createContext } from "react";
+import { useEffect, useState, createContext } from "react";
 import Countries from "./Components/Countries";
 import Header from "./Components/Header";
 import SearchBox from "./Components/SearchBox";
@@ -12,13 +12,52 @@ function App() {
   const [isThere, setIsThere] = useState(true);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  const [region, setRegion] = useState("https://restcountries.com/v3.1/all");
+
+  const regions = [
+    "https://restcountries.com/v3.1/all",
+    "https://restcountries.com/v3.1/region/europe",
+    "https://restcountries.com/v3.1/region/africa",
+    "https://restcountries.com/v3.1/region/asia",
+    "https://restcountries.com/v3.1/region/america",
+    "https://restcountries.com/v3.1/region/oceania",
+  ];
+
+  const getRegions = (option: string) => {
+    switch (option) {
+      case "africa":
+        setRegion(regions[2]);
+        break;
+
+      case "asia":
+        setRegion(regions[3]);
+        break;
+
+      case "america":
+        setRegion(regions[4]);
+        break;
+
+      case "europe":
+        setRegion(regions[1]);
+        break;
+
+      case "oceania":
+        setRegion(regions[5]);
+        break;
+
+      case "all regions":
+        setRegion(regions[0]);
+        break;
+    }
+  };
+
   useEffect(() => {
-    fetch("https://restcountries.com/v3.1/all")
+    fetch(region)
       .then((result) => {
         return result.json();
       })
       .then((data) => setCountriesData(data));
-  }, [searchTerm]);
+  }, [searchTerm, region]);
 
   const handleSearchInput = (input: string) => {
     setSearchTerm(input);
@@ -36,15 +75,15 @@ function App() {
     <ThemeContext.Provider value={isDarkMode}>
       <div className={!isDarkMode ? "bg-vDBlue" : "bg-lGrey"}>
         <Header setTheme={setTheme} />
-        <div className="flex justify-between  max-w-7xl mx-auto  mt-8 mb-14">
-          <div className="">
+        <div className="flex justify-between items-center max-w-7xl mx-auto  mt-8 mb-14 ">
+          <div>
             <SearchBox
               countries={countriesData}
               searchInput={handleSearchInput}
             />
           </div>
-          <div className="">
-            <RegionsFilter />
+          <div>
+            <RegionsFilter getRegions={getRegions} />
           </div>
         </div>
         <Countries
