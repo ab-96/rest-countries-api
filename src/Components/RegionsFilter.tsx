@@ -54,7 +54,9 @@ const RegionsFilter = (props: any) => {
           leaveTo="transform opacity-0 scale-95"
         >
           <Menu.Items
-            className={` ${dark}  font-nunito absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md shadow-lg drop-shadow-md  ring-black ring-opacity-5 focus:outline-none`}
+            className={` ${dark}  font-nunito absolute right-0 mobile:left-0
+             z-10 mt-2 w-56 origin-top-right rounded-md shadow-lg drop-shadow-md  
+             ring-black ring-opacity-5 focus:outline-none`}
           >
             <div className="py-1">
               <Menu.Item as="div">
