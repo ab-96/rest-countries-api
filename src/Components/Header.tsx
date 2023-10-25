@@ -41,7 +41,7 @@ const Header = (props: any) => {
         <span
           className={`{ ${
             !isDarkMode ? "text-white" : "text-vDBlue"
-          }  font-nunito cursor-pointer} `}
+          }  font-nunito cursor-pointer font-semibold } `}
           onClick={handleModoeToggle}
         >
           {!isDarkMode ? "Dark Mode" : "Light Mode"}
