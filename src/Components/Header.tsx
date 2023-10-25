@@ -1,10 +1,9 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon } from "@fortawesome/free-solid-svg-icons";
-import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import { SunIcon } from "@heroicons/react/24/solid";
+import { MoonIcon } from "@heroicons/react/24/solid";
 
 const flex = "flex justify-between items-center";
-  const position = "fixed top-0 left-0 right-0 z-50";
+const position = "fixed top-0 left-0 right-0 z-50";
 const Header = (props: any) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -13,35 +12,36 @@ const Header = (props: any) => {
     props.setTheme(isDarkMode);
   };
 
-
-
   return (
     <header
-      className={`${flex} ${position}  p-10 drop-shadow-lg h-24  ${
+      className={`${flex} ${position}  drop-shadow-lg h-24  p-4   ${
         !isDarkMode ? "bg-dBlue" : "bg-white"
       }`}
     >
       <h1
-        className={`text-2xl text-center font-bold pl-10 font-nunito  ${
-          !isDarkMode ? "text-white" : "text-vDBlue"
-        } `}
+        className={`text-2xl text-center font-bold font-nunito ml-16 mobile:ml-0 mobile:text-lg 
+        ${!isDarkMode ? "text-white" : "text-vDBlue"} `}
       >
         Where in the world?
       </h1>
 
-      <div className="flex justify-between items-center space-x-3  ">
+      <div
+        className="flex justify-between space-x-2 cursor-pointer mr-6 mobile:mr-0"
+        onClick={handleModoeToggle}
+      >
         {!isDarkMode ? (
-          <FontAwesomeIcon
+          <MoonIcon
+            className="h-6 w-4"
             style={{ color: isDarkMode ? "black" : "white" }}
-            icon={faMoon}
           />
         ) : (
-          <FontAwesomeIcon icon={faSun} />
+          <SunIcon className="h-6 w-4 " />
         )}
+
         <span
-          className={`${
+          className={`{ ${
             !isDarkMode ? "text-white" : "text-vDBlue"
-          }  font-nunito cursor-pointer`}
+          }  font-nunito cursor-pointer} `}
           onClick={handleModoeToggle}
         >
           {!isDarkMode ? "Dark Mode" : "Light Mode"}

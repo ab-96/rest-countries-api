@@ -28,11 +28,13 @@ const RegionsFilter = (props: any) => {
   };
 
   return (
-    <section className="max-w-7xl mx-auto mt-32">
-      <Menu as="div" className="relative inline-block text-left">
+    <section className="max-w-7xl mx-auto mt-32 mobile:mt-8">
+      <Menu as="div" className="relative inline-block text-left ">
         <div>
           <Menu.Button
-            className={` ${dark}   font-nunito drop-shadow-md inline-flex w-full justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold shadow-sm ring-inset ring-gray-300 hover:bg-gray-50`}
+            className={` ${dark} mobile:h-12 font-nunito drop-shadow-md inline-flex w-full 
+            justify-center mobile:items-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold 
+            hadow-sm ring-inset ring-gray-300 hover:bg-gray-50`}
           >
             {curretRegion}
             <ChevronDownIcon

@@ -73,16 +73,17 @@ function App() {
 
   return (
     <ThemeContext.Provider value={isDarkMode}>
-      <div className={!isDarkMode ? "bg-vDBlue" : "bg-lGrey"}>
+      <div className={`${!isDarkMode ? "bg-vDBlue" : "bg-lGrey"}  min-h-screen`}>
         <Header setTheme={setTheme} />
-        <div className="flex justify-between items-center max-w-7xl mx-auto  mt-8 mb-14 ">
-          <div>
+        <div className="flex justify-between items-center mobile:pl-4 
+         mobile:items-start mobile:flex-col  mt-2 mobile:mt-2 mb-14  ">
+          <div className="ml-20 mobile:ml-0">
             <SearchBox
               countries={countriesData}
               searchInput={handleSearchInput}
             />
           </div>
-          <div>
+          <div className="mr-20">
             <RegionsFilter getRegions={getRegions} />
           </div>
         </div>

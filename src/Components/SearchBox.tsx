@@ -12,9 +12,9 @@ const SearchBox = (props: any) => {
   };
 
   return (
-    <section className="drop-shadow-md mt-32 ">
+    <section className="drop-shadow-md mt-32 mobile:w-80">
       <div
-        className={`w-80 rounded-lg flex items-center justify-center ${dark}`}
+        className={`rounded-lg flex items-center justify-center ${dark}  ` }
       >
         <FontAwesomeIcon
           icon={faMagnifyingGlass}

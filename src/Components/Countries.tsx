@@ -8,7 +8,6 @@ const Countries = (props: any) => {
   );
 
   const theme = useContext(ThemeContext);
-
   const dark = !theme ? "text-white" : "text-vDBlue";
 
   const country = filteredCountries.map((country: any, index: number) => (
@@ -24,7 +23,7 @@ const Countries = (props: any) => {
 
   return (
     <section className="max-w-7xl mx-auto pb-10 ">
-      <div className=" flex flex-wrap gap-10 min-h-screen ">
+      <div className=" flex flex-wrap gap-10 min-h-screen  justify-center">
         {props.isThere ? (
           country
         ) : (
@@ -38,8 +37,3 @@ const Countries = (props: any) => {
 };
 
 export default Countries;
-
-
-
-/// click europe button - > re-render list to display only europe
-/// can filter out only europe or 
