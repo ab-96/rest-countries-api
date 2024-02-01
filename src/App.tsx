@@ -3,6 +3,17 @@ import Countries from "./Components/Countries";
 import Header from "./Components/Header";
 import SearchBox from "./Components/SearchBox";
 import RegionsFilter from "./Components/RegionsFilter";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import CountryInfo from "./Components/CountryInfo";
+import Root from "./Components/Root";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    children: [{ path: "info", element: <CountryInfo /> }],
+  },
+]);
 
 export const ThemeContext = createContext(false);
 
@@ -73,10 +84,14 @@ function App() {
 
   return (
     <ThemeContext.Provider value={isDarkMode}>
-      <div className={`${!isDarkMode ? "bg-vDBlue" : "bg-lGrey"}  min-h-screen`}>
+      <div
+        className={`${!isDarkMode ? "bg-vDBlue" : "bg-lGrey"}  min-h-screen`}
+      >
         <Header setTheme={setTheme} />
-        <div className="flex justify-between items-center mobile:pl-4 
-         mobile:items-start mobile:flex-col  mt-2 mobile:mt-2 mb-14  ">
+        <div
+          className="flex justify-between items-center mobile:pl-4 
+         mobile:items-start mobile:flex-col  mt-2 mobile:mt-2 mb-14  "
+        >
           <div className="ml-20 mobile:ml-0">
             <SearchBox
               countries={countriesData}
@@ -87,6 +102,7 @@ function App() {
             <RegionsFilter getRegions={getRegions} />
           </div>
         </div>
+        <RouterProvider router={router} />
         <Countries
           countries={countriesData}
           searchInput={searchTerm}

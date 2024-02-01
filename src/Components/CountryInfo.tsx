@@ -10,7 +10,7 @@ const CountryInfo = () => {
                 <img src="" alt="" />
             </div>
             <div>
-                <h1></h1>
+                <h1>Yoo</h1>
 
             </div>
 
