@@ -26,12 +26,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./desktop-preview.jpg)
+![alt text](design/desktop-preview.jpg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://rest-countries-nbtfq6lfg-ab-96s-projects.vercel.app/)
+- [Solution URL](https://your-solution-url.com)
+- [Live Site URL](https://rest-countries-nbtfq6lfg-ab-96s-projects.vercel.app/)
 
 ### Built with
 
